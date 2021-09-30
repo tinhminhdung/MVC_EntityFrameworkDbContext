@@ -23,6 +23,30 @@ namespace MVC_EntityFrameworkDbContext.Controllers
             return View();
         }
 
+        public JsonResult Send(int id)
+        {
+
+            if (id > 0)
+            {
+                return Json(new
+                {
+                    status = true,
+                    message = "Thành công",
+                    TrangThai = "Đạt"
+                });
+                //send mail
+            }
+
+            else
+                return Json(new
+                {
+                    status = false,
+                    message = "Lỗi không thành công",
+                    TrangThai = "Không đạt"
+                });
+
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
